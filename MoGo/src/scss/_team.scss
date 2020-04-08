@@ -1,0 +1,25 @@
+.team {
+	&__paragraph {
+		margin: 20px auto;
+		width: 80%;
+		text-align: center;
+	}
+
+	&__gallery {
+		margin-top: 50px;
+	}
+
+	&__info {
+		background: url(../../src/img/team-info.png) center center no-repeat;
+	}
+}
+
+.marks {
+	background-color: $color-primary-lighter;
+
+	&__image {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+}

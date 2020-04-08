@@ -1,0 +1,52 @@
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	@include color-opacity ($color-secondary-base, 0.8);
+	font-size: 16px;
+}
+
+#about-checkbox {
+	display: none;
+}
+
+.title {
+	text-transform: uppercase;
+	margin: 25px 0;
+}
+
+.text {
+	@include color-opacity ($color-secondary-base, 0.5);
+	margin: 25px 0;
+}
+
+%hover {
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+%screen-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+
+/* Scrollbar style */
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-track {
+	@include background-opacity ($color-secondary-base, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: $color-primary-dark;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: $color-secondary-accent-light;
+}

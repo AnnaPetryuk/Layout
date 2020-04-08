@@ -1,0 +1,14 @@
+.banner {
+	height: 100vh;
+	padding: 8%;
+	background-image: url(../../src/img/intro.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+
+	@include flexbox(column, center, flex-start);
+
+	.text {
+		width: 75%;
+	}
+}

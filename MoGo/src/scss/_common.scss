@@ -1,0 +1,207 @@
+html {
+	font-size: 18px;
+}
+
+#select-1,
+#select-2,
+#select-3 {
+	display: none;
+}
+
+.inner {
+	padding: 90px calc((100% - 1200px) / 2);
+	@include flexbox(column, space-between, stretch);
+}
+
+.topic {
+	@include flexbox(column, space-between, center);
+	color: $color-secondary-base;
+
+	&__subtitle {
+		font-family: "Kaushan Script";
+		@include font-style($font-xl, 400);
+	}
+
+	&__title {
+		margin: 10px 0 20px 0;
+		font-family: Montserrat;
+		text-transform: uppercase;
+		@include font-style($font-xxl, 700);
+	}
+
+	&__separation {
+		width: 60px;
+		height: 3px;
+		background-color: $color-accent-dark;
+	}
+}
+
+.paragraph {
+	font-family: Roboto;
+	color: $color-secondary-light;
+	line-height: $font-xl;
+	@include font-style($font-m, 400);
+}
+
+.background-opacity {
+	height: 100%;
+	width: 100%;
+	background: url(../../src/img/phone-background.png) center center no-repeat;
+}
+
+.slider {
+	background-color: $color-primary-lighter;
+
+	&__inner {
+		@include flexbox(row, space-between, center);		
+	}
+
+	&__down {
+		&:first-child {
+			transform: rotate(90deg);
+		}
+
+		&:last-child {
+			transform: rotate(-90deg);
+		}
+	}
+
+	&__block {
+		@include flexbox(row, space-between, center);
+		width: 100%;
+	}
+
+	&__content {
+		width: 90%;
+		@include flexbox(row, space-between, center);
+	}
+
+	&__image {
+		width: 150px;
+		height: 150px;
+		border: 3px solid $color-accent-base;
+		@include flexbox(row, center, center);
+	}
+
+	&__info {
+		@include flexbox(column, space-between, flex-start);
+		width: 80%;
+	}
+
+	&__text {
+		color: $color-secondary-light;
+		font-family: "Roboto - Light Italic";
+		font-style: italic;
+		line-height: 36px;
+		@include font-style($font-xl, 400);
+	}
+
+	&__author {
+		color: $color-secondary-base;
+		font-family: "Kaushan Script";
+		margin-top: 10px;
+		padding-left: 70px;
+		position: relative;
+		@include font-style($font-xl, 400);
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			@include ver-centring();
+			width: 60px;
+			height: 3px;
+			background-color: $color-accent-dark;
+		}
+	}	
+
+	&__picture {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+
+	&__image--changing {
+		width: 180px;
+		height: 180px;
+		border: none;
+	}
+}
+
+
+/* Scrollbar style */
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: $color-primary-base;
+}
+
+::-webkit-scrollbar-thumb {
+	@include background-opacity($color-accent-base, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: $color-accent-base;
+}
+
+
+@media screen and (max-width: 1200px) {
+	html {
+		font-size: 17px;
+	}
+	.inner {
+		padding: 50px 20px;
+	}
+	.slider {
+		&__content {
+			width: 85%;
+		}
+
+		&__info {
+			width: 75%;
+		}
+	}
+}
+
+@media screen and (max-width: 992px) {
+	html {
+		font-size: 16px;
+	}
+	.slider {
+		&__content {
+			width: 80%;
+		}
+
+		&__info {
+			width: 70%;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	html {
+		font-size: 15px;
+	}
+	.slider {
+		&__content {
+			width: 90%;
+			@include flexbox(column, space-between, center);
+		}
+		&__info {
+			@include flexbox(column, space-between, center);
+			margin-top: 10px;
+		}
+		&__text {
+			text-align: center;
+		}
+	}
+}
+
+@media screen and (max-width: 567px) {
+	html {
+		font-size: 14px;
+	}
+}

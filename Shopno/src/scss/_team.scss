@@ -1,0 +1,19 @@
+.team {
+	background-color: $color-primary-thelightest;
+	
+	&__inner {
+		@include flexbox(column, center, center);
+	}
+
+	&__gallery-wrapper {
+		margin-top: 145px;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.team {
+		&__gallery-wrapper {
+			margin-top: 50px;
+		}
+	}
+}

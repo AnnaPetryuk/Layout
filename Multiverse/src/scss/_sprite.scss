@@ -1,0 +1,75 @@
+.icon {
+	position: relative;
+	height: 24px;
+	width: 24px;
+	margin-right: 10px;
+	
+	&::before {
+		content: "";
+		position: absolute;
+		height: 24px;
+		width: 24px;
+		background-image: url(../../src/img/icon.png);
+		@extend %hover;
+	}
+}
+
+.icon-1 {
+	&::before {
+		background-position: 0 0;
+	}
+
+	&:hover::before {
+		background-position: 0 -24px;
+	}
+}
+
+.icon-2 {
+	&::before {
+		background-position: 0 -48px;
+	}
+
+	&:hover::before {
+		background-position: 0 -72px;
+	}
+}
+
+.icon-3 {
+	&::before {
+		background-position: 0 -96px;
+	}
+
+	&:hover::before {
+		background-position: 0 -120px;
+	}
+}
+
+.icon-4 {
+	&::before {
+		background-position: 0 -144px;
+	}
+
+	&:hover::before {
+		background-position: 0 -168px;
+	}
+}
+
+.icon-5 {
+	&::before {
+		background-position: 0 -192px;
+	}
+
+	&:hover::before {
+		background-position: 0 -216px;
+	}
+}
+
+.icon-6 {
+	&::before {
+		background-position: 0 -240px;
+	}
+
+	&:hover::before {
+		background-position: 0 -264px;
+	}
+}

@@ -1,0 +1,31 @@
+.footer {
+	padding: 8%;
+	background-color: $color-primary-darker;
+	@include font-style($font-text-small, 500);
+	
+	@include flexbox(row, flex-start, center);
+
+	.footer-item {
+		@include color-opacity($color-secondary-base, 0.4);
+
+		padding: 0 15px;
+
+		&:not(:last-child) {
+			border-right: 1px solid;
+			@include border-opacity($color-secondary-base, 0.4);
+		}
+	}
+}
+
+@media screen and (max-width: 728px) {
+	.footer {
+		@include flexbox(column, flex-start, flex-start);
+
+		.footer-item {
+			padding: 5px 0;
+			&:not(:last-child) {
+				border-right: none;
+			}
+		}
+	}
+}

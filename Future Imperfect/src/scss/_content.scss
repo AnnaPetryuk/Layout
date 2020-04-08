@@ -1,0 +1,221 @@
+.content {
+	.section {
+		background-color: $color-secondary-base;
+		border: 1px solid;
+		@include border-opacity ($color-primary-light, 0.3);
+		margin-bottom: 30px;
+	}
+}
+
+.section-header {
+	@include flexbox(row, flex-start, stretch);
+
+	.section-topic {
+		width: 65%;
+		padding: 5%;
+		border-right: 1px solid;
+		@include border-opacity ($color-primary-light, 0.3);
+
+		.title {
+			font-size: $font-xl;
+			@extend %hover-accent;
+		}
+	}
+
+	.section-date {
+		width: 35%;
+		padding: 7%;
+		@include flexbox(column, center, flex-end);
+
+		.date {
+			font-weight: 800;
+		}
+
+		.author {
+			@include flexbox(row, flex-start, center);
+
+			.photo {
+				width: 36px;
+				height: 36px;
+				border-radius: 20px;
+				margin-left: 10px;
+				background-image: url(../.././src/img/article-logo.jpg);
+			}
+		}
+	}
+}
+
+.section-main {
+	border-top: 1px solid;
+	@include border-opacity ($color-primary-light, 0.3);
+	padding: 5%;
+
+	.section-image {
+		@include flexbox(column, center, center);
+		overflow: hidden;
+	}
+
+	.text {
+		padding: 25px 0;
+		font-size: $font-l;
+	}
+}
+
+.section-panel {
+	@include flexbox(row, space-between, center);	
+
+	.button {
+		width: 210px;
+	}
+
+	.panel-info {
+		width: 220px;
+		@include flexbox(row, space-between, center);
+
+		.subtitle {
+			padding: 0 10px 0 30px;
+			@extend %hover-accent;
+
+			&:not(:last-child) {
+				border-right: 1px solid;
+				@include border-opacity ($color-primary-light, 0.3);
+			}
+		}
+	}
+}
+
+.pagination {
+	@include flexbox(row, flex-start, center);	
+
+	.button {
+		width: 170px;
+		margin-right: 20px;
+	}
+
+	.unavailable {
+		opacity: 0.5;
+
+		&:hover {
+			border: 1px solid;
+			@include border-opacity ($color-primary-light, 0.3);
+			cursor: default;
+		}
+
+		&:hover .title {
+			color:  $color-primary-dark;
+			cursor: default;
+		}
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.section-header {
+	
+		.section-topic {
+			padding: 4%;
+		}
+
+		.section-date {
+			padding: 5%;
+		}
+
+		.section-main {
+			padding: 4%;
+		}
+	}
+	.pagination {
+		border-bottom: 1px solid;
+		@include border-opacity ($color-primary-light, 0.3);
+		padding-bottom: 50px;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.section-header {
+		@include flexbox(column, flex-start, center);
+
+		.section-topic {
+			width: 100%;
+			border-right: none;
+			@include flexbox(column, center, center);
+
+			.title,
+			.subtitle {
+				text-align: center;
+			}
+		}
+
+		.section-date {
+			padding: 3%;
+			width: 370px;
+			@include flexbox(row, space-between, center);
+
+			.date {
+				font-weight: 800;
+				padding-right: 20px;
+				border-right: 1px solid;
+				@include border-opacity ($color-primary-light, 0.3);
+			}
+
+			.author {
+				@include flexbox(row-reverse, flex-start, center);
+
+				.photo {
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+
+	.pagination {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.section-header {
+		.section-date {
+			width: 100%;
+			@include flexbox(column, center, center);
+			.date {
+				border: none;
+				padding-right: none;
+				padding-bottom: 15px;
+			}
+			.author {
+				@include flexbox(row, center, center);
+				.subtitle {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.section-panel {
+		@include flexbox(column-reverse, center, center);	
+
+		.button {
+			width: 100%;
+		}
+
+		.panel-info {
+			@include flexbox(row, center, center);
+			margin-bottom: 30px;
+			
+			.subtitle:first-child {
+				padding: 0 10px 0 0px;
+			}
+		}
+	}
+
+	.pagination {
+		@include flexbox(column, center, center);
+
+		.button {
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
+	}
+}

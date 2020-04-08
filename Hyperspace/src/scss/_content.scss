@@ -1,0 +1,106 @@
+.content {
+	padding: 8%;
+	position: relative;
+	background-color: $color-secondary-accent;
+	@include flexbox(column, flex-start, flex-start);
+
+	.title {
+		@include font-style($font-title-middle);
+	}
+
+	.text {
+		@include font-style($font-text-middle, 500);
+	}
+}
+
+.table {
+	border-radius: 5px;
+	width: 100%;
+	margin-bottom: 30px;
+	border: 1px solid;
+	@include border-opacity($color-secondary-base, 0.2);
+	@include background-opacity($color-secondary-base, 0.1);
+	@include flexbox(row, flex-start, flex-start, wrap);
+	
+}
+
+
+.table-item {
+	width: 50%;
+	padding: 3%;
+	padding-bottom: 0;
+	border: 1px solid;
+	@include border-opacity($color-secondary-base, 0.2);
+
+	@include flexbox(row, space-around, flex-start);
+	
+	.icon-wrapper {
+		width: 10%;
+	}
+
+	.text-wrapper {
+		width: 80%;
+	}
+
+	.title {
+		@include font-style($font-title-small);
+	}
+
+	.icon {
+		position: relative;
+		width: 40px;
+		height: 40px;
+		border-radius: 30px;
+		background-color: $color-secondary-base;
+
+		&::before {
+			content: '';
+			position: absolute;
+			@include sprite(24px);
+			@include centring(-12px);
+		}
+	}
+
+	.icon-1::before {
+		background-position: 0 0;
+	}
+
+	.icon-2::before {
+		background-position: 0 -24px;
+	}
+
+	.icon-3::before {
+		background-position: 0 -48px;
+	}
+
+	.icon-4::before {
+		background-position: 0 -72px;
+	}
+
+	.icon-5::before {
+		background-position: 0 -96px;
+	}
+
+	.icon-6::before {
+		background-position: 0 -120px;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.table-item {
+		width: 100%;
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+	.table-item {
+		@include flexbox(column, flex-start, flex-start);
+
+		.icon-wrapper,
+		.text-wrapper {
+			width: 100%;
+			margin-top: 15px;
+		}
+	}
+}

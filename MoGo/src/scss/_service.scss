@@ -1,0 +1,116 @@
+.service {
+	&__table {
+		margin-top: 50px;
+		position: relative;
+		@include flexbox(row, space-between, stretch, wrap);
+		
+		&:before {
+		    content: "";
+		    position: absolute;
+		    width: 100%;
+		    height: 1px;
+		    top: 50%;
+		    background-color: $color-primary-base;
+		}
+	}
+
+	&__table-item {
+		width: 32%;
+		position: relative;
+		padding-left: 7%;
+		margin: 25px 0;
+	}
+
+	&__icon {
+		position: absolute;
+		top: 5px;
+		left: 25px;
+	}
+
+	&__title {
+		color: $color-secondary-base;
+		font-family: Montserrat;
+		text-transform: uppercase;
+		@include font-style($font-s, 400);
+	}
+
+	&__paragraph {
+		margin-top: 5px;
+		color: $color-secondary-light;
+		font-family: Roboto;
+		line-height: $font-xl;
+		@include font-style($font-m, 400);
+	}
+
+	&__inner {
+		height: 850px;
+		@include background-opacity($color-primary-thelightest, 0.8);
+		position: relative;
+	}
+
+	&__image {
+		position: absolute;
+		@include hor-centring();
+		bottom: -91px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.service {
+		&__table {
+			&:before {
+			    display: none;
+			}
+		}
+		&__table-item {
+			width: 49%;
+			padding-left: 10%;
+		}
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.service {
+		&__inner {
+			height: 750px;
+		}
+
+		&__image {
+			width: 500px;
+			height: auto;
+			bottom: -72px;
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.service {
+		&__table {
+			@include flexbox(column, flex-start, center, wrap);
+		}
+
+		&__table-item {
+			width: 100%;
+			padding-left: 20%;
+		}
+
+		&__inner {
+			height: 600px;
+		}
+
+		&__image {
+			width: 400px;
+			bottom: -58px;
+		}
+	}
+}
+
+@media screen and (max-width: 567px) {
+	
+	.service {
+		&__image {
+			width: 300px;
+			bottom: -43px;
+		}
+	}
+}

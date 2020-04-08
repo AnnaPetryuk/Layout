@@ -1,0 +1,76 @@
+.panel {
+	@include flexbox(column, space-between, stretch);
+
+	&__section {
+		@include flexbox(column, flex-start, stretch);
+		border: 1px solid $color-primary-base;
+		overflow: hidden;
+	}
+
+	&__title {
+		padding: 22px;
+		padding-left: 60px;
+		position: relative;
+		color: $color-secondary-base;
+		font-family: Montserrat;
+		text-transform: uppercase;
+		@include font-style($font-s, 600);
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		@include ver-centring();
+		left: 15px;
+	}
+
+	&__down {
+		left: auto;
+		right: 15px;
+	}
+
+	&__text-wrapper {
+		visibility: hidden;
+		height: 0;
+		overflow: hidden;
+		border-top: 1px solid $color-primary-base;
+		transition: height 0.5s;
+	}
+
+	&__text {
+		overflow: auto;
+		height: 100%;
+		color: $color-secondary-light;
+		font-family: "Roboto - Light Italic";
+		font-style: italic;
+		line-height: $font-xl;
+		@include font-style($font-m, 400);
+		
+	}
+}
+
+#select-1:checked ~ .work .text-1,
+#select-2:checked ~ .work .text-2,
+#select-3:checked ~ .work .text-3 {
+	visibility: visible;
+	height: 160px;
+	padding: 22px;
+}
+
+#select-1:checked ~ .work .down-1,
+#select-2:checked ~ .work .down-2,
+#select-3:checked ~ .work .down-3 {
+	transform: rotate(180deg);
+	margin-top: -6px;
+}
+
+@media screen and (max-width: 1100px) {
+	.panel {
+		&__section {
+			margin-bottom: 10px;
+		}
+	}
+}

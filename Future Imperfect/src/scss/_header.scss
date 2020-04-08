@@ -1,0 +1,183 @@
+#header {
+	@include flexbox(row, space-between, stretch);
+	background-color: $color-secondary-base;
+	border-bottom: 1px solid;
+	@include border-opacity ($color-primary-light, 0.3);
+
+	.h-left {
+		@include flexbox(row, flex-start, stretch);
+	}
+
+	.h-right {
+		@include flexbox(row, flex-end, stretch);
+	}
+}
+
+.logo {
+	border-right: 1px solid;
+	@include border-opacity ($color-primary-light, 0.3);
+	padding: 15px;
+
+	&:hover .title{
+		color: $color-secondary-accent;
+	}
+}
+
+.menu {
+	@include flexbox(row, flex-start, stretch);
+	padding: 15px;
+
+	.menu-item {
+		padding: 0 15px;
+
+		&:hover .subtitle {
+			color: $color-secondary-accent;
+		}
+
+		&:not(:last-child) {
+			border-right: 1px solid;
+			@include border-opacity ($color-primary-light, 0.3);
+		}
+	}
+}
+
+.search {
+	border-left: 1px solid;
+	@include border-opacity ($color-primary-light, 0.3);
+	padding: 10px 5px 5px 45px;
+		
+	.main-search {
+		border: 2px solid $color-secondary-accent;
+		visibility: hidden;
+		width: 0;
+		height: 35px;
+		transition: width 1s;
+	}
+
+	.search-shell {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		top: 55px;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.dropdown-menu {
+	border-left: 1px solid;
+	@include border-opacity ($color-primary-light, 0.3);
+	padding: 15px 25px;
+
+	.menu-shell {
+		visibility: hidden;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 5;
+		background-color: $color-secondary-base;
+		opacity: 0.7;
+	}
+
+	.dropdown-menu-wrapper {
+		position: fixed;
+		top: 0;
+		right: -400px;
+		width: 400px;
+		bottom: 0;
+		background-color: $color-secondary-base;
+		border-left: 1px solid;
+		@include border-opacity ($color-primary-light, 0.3);
+		overflow: auto;
+		z-index: 10;
+		transition: right 0.6s;
+	}
+}
+
+.open-button {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	@include ver-centring();
+	left: 15px;
+	cursor: pointer;
+}
+
+.dropdown-menu-block {
+	padding: 10%;
+	border-bottom: 1px solid;
+	@include border-opacity ($color-primary-light, 0.3);
+	
+	&:last-child {
+		border-bottom: none;
+	}	
+}
+
+.secondary-search{
+	border: 2px solid $color-secondary-accent;
+	width: 100%;
+	height: 40px;
+	padding: 5px;
+}	
+
+.submenu {
+	@include flexbox(column, justify, stretch);
+
+	.submenu-item {
+		padding: 20px 0;
+		border-bottom: 1px solid;
+		@include border-opacity ($color-primary-light, 0.3);
+		
+		&:hover .title,
+		&:hover .subtitle {
+			color: $color-secondary-accent;
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}	
+	}
+}
+
+#open-search:checked ~ #header .main-search {
+	visibility: visible;
+	width: 200px;
+	margin-right: 10px;
+	padding: 5px;
+}
+
+#open-menu:checked ~ #header .dropdown-menu-wrapper {
+	right: 0;
+}
+
+#open-search:checked ~ #header .search-shell,
+#open-menu:checked ~ #header .menu-shell {
+	visibility: visible;
+}
+
+@media screen and (max-width: 980px) {
+	.logo {
+		border-right: none;
+	}
+	.menu {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.search {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.dropdown-menu {
+		.dropdown-menu-wrapper {
+			right: -300px;
+			width: 300px;
+		}
+	}
+}

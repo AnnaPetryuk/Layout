@@ -1,0 +1,28 @@
+* {
+	box-sizing: border-box;
+}
+
+html, 
+body {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: rgba(255,255,255,0.8);
+	&:hover {
+		text-decoration: none;
+		color: rgba(255,255,255,0.8);
+	}
+}
+
+label {
+	margin: 0;
+}
+
+input,
+button,
+textarea {
+	outline: none;
+}

@@ -1,0 +1,46 @@
+.work {
+	
+	&__paragraph {
+		margin: 20px auto;
+		width: 80%;
+		text-align: center;
+	}
+
+	&__panel-wrapper {
+		@include flexbox(row, space-between, stretch);
+	}
+
+	&__block {
+		width: 49%;
+	}
+
+	&__image {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
+
+@media screen and (max-width: 1100px) {
+
+	.work {
+		&__panel-wrapper {
+			@include flexbox(column, space-between, center);
+		}
+
+		&__block {
+			width: 80%;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	.work {
+		&__block {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,94 @@
+.projects {
+
+	&__paragraph {
+		margin: 20px auto;
+		width: 80%;
+		text-align: center;
+	}
+
+}
+
+.presentation {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+
+	&__image-wrapper {
+		position: relative;
+
+		&:hover .presentation__info {
+			visibility: visible;
+			filter: opacity(0.9);
+			cursor: pointer;
+		}
+	}
+
+	&__image {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		
+	}
+
+	&__unify {
+		grid-row: 1/3;
+		grid-column: 3/4;
+	}
+
+	&__info {
+		visibility: hidden;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		background: url(../../src/img/presentation-info.png) center center no-repeat;
+		filter: opacity(0);
+		background-size: cover;
+		transition: all 0.8s ease;
+		@include flexbox(column, center, center);
+	}
+
+	&__change {
+		background: url(../../src/img/banner.png) center center no-repeat;
+	}
+
+	&__title {
+		margin: 15px 0 10px 0;
+		color: $color-primary-thelightest;
+		font-family: Montserrat;
+		text-transform: uppercase;
+		@include font-style($font-s, 400);
+	}
+
+	&__text {
+		color: $color-primary-thelightest;
+		font-family: "Roboto - Light Italic";
+		font-style: italic;
+		@include font-style($font-m, 400);
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.presentation {
+		grid-template-columns: repeat(3, 1fr);
+
+		&__unify {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.presentation {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.presentation {
+		grid-template-columns: repeat(1, 1fr);
+
+		&__unify {
+			display: none;
+		}
+	}
+}

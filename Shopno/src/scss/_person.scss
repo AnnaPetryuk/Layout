@@ -1,0 +1,67 @@
+.person {
+	background-color: $color-primary-base;
+
+	&__header-wrapper {
+		@include flexbox(column, center, center);
+	}
+
+	&__information-wrapper {
+		@include flexbox(row, space-between, flex-start);
+		margin-top: 145px;
+	}
+
+	&__block {
+		width: 47%;	
+	}
+
+	&__description {
+		width: 50%;
+		height: 400px;
+	}
+}
+
+// Switch for slider
+
+#person-1:checked ~ .person .img-1,
+#person-2:checked ~ .person .img-2,
+#person-3:checked ~ .person .img-3,
+#person-4:checked ~ .person .img-4 {
+	visibility: visible;
+	opacity: 0.99;
+}
+
+#person-1:checked ~ .person .btn-1,
+#person-2:checked ~ .person .btn-2,
+#person-3:checked ~ .person .btn-3,
+#person-4:checked ~ .person .btn-4 {
+	background-color: $color-accent-darker;
+}
+
+@media screen and (max-width: 992px) {
+	.person {
+		&__information-wrapper {
+			@include flexbox(column-reverse, flex-start, center);
+			margin-top: 50px;
+		}
+
+		&__block {
+			width: 590px;	
+		}
+
+		&__description {
+			width: 100%;
+		}
+
+		&__slider {
+			margin-top: 100px;
+		}
+	}
+}
+
+@media screen and (max-width: 567px) {
+	.person {
+		&__block {
+			width: 100%;	
+		}
+	}
+}

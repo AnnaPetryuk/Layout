@@ -1,0 +1,237 @@
+.footer {
+
+	background-color: $color-primary-lighter;
+
+	&__map-wrapper {
+		background: url(../../src/img/map.png) center center no-repeat;
+	}
+	
+	
+
+	&__map {
+		height: 200px;
+    	background: rgba(255, 255, 255, 0.8);
+    	@include flexbox(column, center, center);
+	}
+
+	&__title {
+		margin: 15px 0;
+		color: $color-accent-dark;
+		font-family: Montserrat;
+		text-transform: uppercase;
+		@include font-style($font-xl, 700);
+	}
+
+	&__separation {
+		width: 60px;
+		height: 3px;
+		background-color: $color-accent-dark;
+	}
+
+	&__inner {
+		@include flexbox(row, space-between, flex-start);
+	}
+
+	&__block {
+		width: 29%;
+
+		&:first-child {
+			width: 36%;
+		}
+	}
+
+	&__logo {
+		color: $color-primary-darker;
+		font-family: Montserrat;
+		@include font-style($font-xxxl, 700);
+	}
+
+	&__paragraph {
+		margin: 30px 0;
+		color: $color-secondary-light;
+		font-family: Roboto;
+		line-height: $font-xl;
+		@include font-style($font-m, 400);
+	}
+
+	&__followers {
+		padding: 10px 0;
+		color: $color-secondary-base;
+		font-family: Montserrat;
+		border-bottom: 1px solid $color-primary-base;
+		@include font-style($font-m, 400);
+	}
+
+	&__followers--value {
+		font-weight: 800;
+	}
+
+	&__networks {
+		margin: 10px 0 20px 0;
+		color: $color-secondary-light;
+		font-family: "Roboto - Light Italic";
+		font-style: italic;
+		line-height: $font-xl;
+		@include flexbox(row, flex-start, center);
+		@include font-style($font-m, 400);
+	}
+
+	&__caption {
+		margin-right: 20px;
+	}
+
+	&__sprite {
+		margin-right: 10px;
+	}
+
+	&__form {
+		@include flexbox(row, flex-start, center);
+	}
+
+	&__input {
+		color: $color-primary-darker;
+		font-family: "Roboto - Light Italic";
+		font-style: italic;
+		line-height: $font-xl;
+		width: 230px;
+		height: 40px;
+		padding: 10px;
+		border: 1px solid $color-primary-dark;
+		background-color: $color-primary-thelightest;
+		@include font-style($font-m, 400);
+	}
+
+	&__button {
+		color: $color-primary-thelightest;
+		font-family: Montserrat;
+		text-transform: uppercase;
+		width: 150px;
+		height: 40px;
+		background-color: $color-accent-base;
+		@include font-style($font-s, 700);
+	}
+
+	&__subtitle {
+		margin-top: 15px;
+		color: $color-secondary-base;
+		font-family: Montserrat;
+		text-transform: uppercase;
+		@include font-style($font-s, 700);
+	}
+
+	&__news-wrapper {
+		margin-top: 40px;
+		@include flexbox(column, space-between, stretch);
+	}
+
+	&__news {
+		@include flexbox(row, space-between, center);
+		margin-bottom: 25px;
+	}
+
+	&__text {
+		color: $color-secondary-base;
+		font-family: Montserrat;
+		line-height: $font-l;
+		text-transform: uppercase;
+		padding-left: 15px;
+		@include font-style($font-xxs, 700);
+	}
+
+	&__date {
+		margin-top: 7px;
+		color: $color-secondary-light;
+		font-family: "Roboto - Light Italic";
+		font-style: italic;
+		line-height: font-xl;
+		@include font-style($font-xs, 400);
+	}
+
+	&__image {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+
+	&__gallery {
+		margin-top: 40px;
+		display: grid;
+		grid-template-columns: repeat(3, 88px);
+		grid-gap: 5px;
+	}
+
+	&__subscribe {
+		margin-top: 20px;
+		color: $color-secondary-base;
+		font-family: "Roboto - Light Italic";
+		font-style: italic;
+		line-height: $font-xl;
+		@include font-style($font-s, 400);
+	}
+
+	&__bottom-wrapper {
+		padding: 2%;
+		@include flexbox(row, center, center);
+		border-top: 1px solid $color-primary-base;
+	}
+
+	&__bottom {
+		color: $color-secondary-base;
+		font-family: Montserrat;
+		@include font-style($font-s, 700);
+		
+	}
+
+	&__bottom--accent {
+		color: $color-accent-dark;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.footer {
+		&__inner {
+			@include flexbox(row, space-around, flex-start, wrap);
+		}
+
+		&__block {
+			width: 35%;
+			margin-bottom: 20px;
+			
+			&:first-child {
+				width: 90%;
+			}
+		}
+
+		&__news {
+			@include flexbox(row, flex-start, center);
+		}
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.footer {
+
+		&__block {
+			width: 40%;
+			margin-bottom: 20px;
+			
+			&:first-child {
+				width: 90%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.footer {
+
+		&__block {
+			width: 90%;
+			margin-bottom: 20px;
+			
+			&:first-child {
+				width: 90%;
+			}
+		}
+	}
+}

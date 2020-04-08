@@ -1,0 +1,33 @@
+.description {
+	background-color: $color-primary-lighter;
+	@include flexbox(column, space-around, center);	
+	padding: 5%;
+	position: relative;
+
+	&__controls {
+		position: absolute;
+		right: 0;
+		height: 53px;
+		bottom: -56px;
+		width: 100px;
+		@include flexbox(row, space-between, center);
+	}
+
+	&__key {
+		width: 42px;
+		height: 42px;
+		border-radius: 3px;
+		@include flexbox(row, center, center);
+	}
+
+	&__prev {
+		box-shadow: 3px 7px 11px rgba(20, 20, 21, 0.05);
+		background-color: $color-primary-thelightest;
+	}
+
+	&__next {
+		box-shadow: 2px 6px 11px rgba(20, 20, 21, 0.1);
+		background-color: $color-accent-light;
+	}
+
+}

@@ -1,0 +1,81 @@
+.clients {
+	background: url(../../src/img/person-bg.png) center center no-repeat;
+	
+
+	&__inner {
+		height: 700px;
+    	background: rgba(255, 255, 255, 0.8);
+	}
+
+	&__table {
+		margin-top: 50px;
+		position: relative;
+		@include flexbox(row, space-between, stretch, wrap);
+		
+		&:before {
+		    content: "";
+		    position: absolute;
+		    width: 100%;
+		    height: 1px;
+		    top: 50%;
+		    background-color: $color-primary-base;
+		}
+	}
+
+	&__table-item {
+		width: 47%;
+		position: relative;
+		margin: 25px 0;
+		@include flexbox(row, space-between, flex-start);
+	}
+
+	&__text-wrapper {
+		padding-left: 25px;
+	}
+
+	&__title {
+		color: $color-secondary-base;
+		font-family: Montserrat;
+		text-transform: uppercase;
+		@include font-style($font-s, 400);
+	}
+
+	&__speciality {
+		margin: 5px 0;
+		color: $color-secondary-light;
+		font-family: "Roboto - Light Italic";
+		font-style: italic;
+		line-height: $font-xl;
+		@include font-style($font-m, 400);
+	}
+
+	&__separation {
+		width: 60px;
+		height: 3px;
+		background-color: $color-accent-dark;
+	}
+
+	&__paragraph {
+		margin-top: 15px;
+		color: $color-secondary-light;
+		font-family: Roboto;
+		line-height: $font-xl;
+		@include font-style($font-m, 400);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.clients {
+		&__inner {
+			height: auto;
+		}
+
+		&__table {
+			@include flexbox(column, space-between, center);
+		}
+
+		&__table-item {
+			width: 100%;
+		}
+	}
+}

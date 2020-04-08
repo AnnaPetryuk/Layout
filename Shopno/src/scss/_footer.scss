@@ -1,0 +1,44 @@
+.footer {
+	background-color: $color-secondary-darker;
+	
+	&__inner {
+		@include flexbox(column, space-around, center);
+	}
+
+	&__title {
+		font-family: Raleway;
+		line-height: 25px;
+		letter-spacing: 0.16px;
+		text-transform: uppercase;
+		@include color-opacity($color-primary-thelightest, 0.8);
+		@include font-style($font-xxs, 400);
+	}
+
+	&__icon-wrapper {
+		@include flexbox(row, center, center);
+		margin-top: 15px;
+		margin-bottom: 50px;
+	}
+
+	&__icon {
+		width: 36px;
+		height: 30px;
+		margin-right: 10px;
+		@include background-opacity($color-secondary-light, 0.4);
+		@include flexbox(row, center, center);
+		
+		transition: all 1s;
+		
+		&:hover {
+			background-color: $color-accent-darker;
+		}
+	}
+
+	&__copyright {
+		font-family: Raleway;
+		line-height: 25px;
+		letter-spacing: 0.16px;
+		@include color-opacity($color-primary-thelightest, 0.4);
+		@include font-style($font-xxs, 500);
+	}
+}

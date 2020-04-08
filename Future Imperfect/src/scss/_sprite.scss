@@ -1,0 +1,100 @@
+.icon {
+	position: relative;
+	cursor: pointer;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		@include sprite(24px);
+	}
+}
+
+.icon-1 {
+	&::before {
+		left: 15px;
+		@include ver-centring();
+		background-position: 0 0;
+	}
+	&:hover::before {
+		background-position: 0 -24px;
+	}
+}
+
+.icon-2 {
+	&::before {
+		@include centring();
+		background-position: 0 -48px;
+	}
+	&:hover::before {
+		background-position: 0 -72px;
+	}
+}
+
+.icon-3 {
+	&::before {
+		background-position: 0 -96px;
+	}
+	&:hover::before {
+		background-position: 0 -120px;
+	}
+}
+
+.icon-4 {
+	&::before {
+		background-position: 0 -144px;
+	}
+	&:hover::before {
+		background-position: 0 -168px;
+	}
+}
+
+.icon-5 {
+	&::before {
+		background-position: 0 -192px;
+	}
+	&:hover::before {
+		background-position: 0 -216px;
+	}
+}
+
+.icon-6 {
+	&::before {
+		background-position: 0 -240px;
+	}
+	&:hover::before {
+		background-position: 0 -264px;
+	}
+}
+
+.icon-7 {
+	&::before {
+		background-position: 0 -288px;
+	}
+	&:hover::before {
+		background-position: 0 -312px;
+	}
+}
+
+.icon-8 {
+	&::before {
+		@include sprite(16px);
+		background-position: 0 -336px;
+		left: 8px;
+    	bottom: 4px;
+	}
+	&:hover::before {
+		background-position: 0 -352px;
+	}
+}
+
+.icon-9 {
+	&::before {
+		@include sprite(16px);
+		background-position: 0 -368px;
+		left: 8px;
+    	bottom: 4px;
+	}
+	&:hover::before {
+		background-position: 0 -384px;
+	}
+}

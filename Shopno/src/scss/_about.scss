@@ -1,0 +1,66 @@
+.about {
+	background-color: $color-primary-dark;
+
+	&__header-wrapper {
+		@include flexbox(column, center, center);
+	}
+
+	&__information-wrapper {
+		@include flexbox(row, space-between, flex-start);
+		margin-top: 145px;
+	}
+
+	&__block {
+		width: 49%;		
+	}
+
+	&__topic {
+		margin-bottom: 20px;
+		font-family: Merriweather;
+		line-height: 28px;
+		letter-spacing: 1.2px;
+		text-transform: uppercase;
+		@include color-opacity($color-secondary-thedarkest, 0.75);
+		@include font-style($font-l, 700);
+	}
+
+	&__paragraph {
+		margin-bottom: 20px;
+		font-family: Raleway;
+		line-height: 28px;
+		letter-spacing: 0.8px;
+		@include color-opacity($color-secondary-thedarkest, 0.74);
+		@include font-style($font-xxs, 400);
+	}
+}
+
+// Switch for slider
+
+#switch-1:checked ~ .about .img-1,
+#switch-2:checked ~ .about .img-2,
+#switch-3:checked ~ .about .img-3,
+#switch-4:checked ~ .about .img-4 {
+	visibility: visible;
+	opacity: 0.99;
+}
+
+#switch-1:checked ~ .about .btn-1,
+#switch-2:checked ~ .about .btn-2,
+#switch-3:checked ~ .about .btn-3,
+#switch-4:checked ~ .about .btn-4 {
+	background-color: $color-accent-darker;
+}
+
+@media screen and (max-width: 992px) {
+
+	.about {
+		&__information-wrapper {
+			@include flexbox(column-reverse, space-between, center);
+			margin-top: 50px;
+		}
+
+		&__block {
+			width: 100%;		
+		}
+	}
+}

@@ -1,0 +1,107 @@
+.header {
+	background-color: $color-primary-lighter;
+
+	&__inner {
+		height: 100vh;
+		padding: 5% calc((100% - 1142px) / 2);
+		position: relative;
+		@include flexbox(column, space-between, stretch);
+
+		&:after {
+			content: "";
+			position: absolute;
+			background-image: url(../../src/img/juice.png);
+			width: 82px;
+			height: 90px;
+			bottom: 20%;
+			right: calc((100% - 1142px) / 2 + 7%);
+		}
+	}
+
+	&__menu-wrapper {
+		@include flexbox(row, space-between, center);
+	}
+
+	&__logo {
+		padding: 2px 5px;
+		border: 6px solid $color-secondary-thedarkest;
+		text-shadow: 0 0 2px rgba(21, 21, 22, 0.75);
+		font-family: Montserrat;
+		line-height: 28px;
+		letter-spacing: 1.02px;
+		text-transform: uppercase;
+		color: $color-secondary-thedarkest;
+		@include font-style($font-xs, 700);	
+	}	
+
+	.letter-o {
+		color: $color-accent-thelightest;
+		font-size: 21px;
+		letter-spacing: 1.26px;
+	}
+	
+	.menu {
+		height: 21px;
+		width: 30px;
+		background-image: url(../../src/img/menu.png);
+	}
+
+	&__banner-wrapper {
+		@include flexbox(column, space-around, center);
+		height: 80%;
+	}
+
+	&__title {
+		text-shadow: 4px 8px 10px rgba(0, 0, 0, 0.24);
+		font-family: Montserrat;
+		line-height: 64px;
+		letter-spacing: 2.7px;
+		text-transform: uppercase;
+		text-align: center;
+		color: $color-secondary-dark;
+		@include font-style($font-xxxxl, 700);	
+	}
+	
+	&__title--accent {
+		@include background-opacity($color-accent-dark, 0.5);
+	}
+
+	&__button {
+		border: 2px solid;
+		@include border-opacity($color-secondary-thedarkest, 0.5);
+	}
+}
+
+
+@media screen and (max-width: 1200px) {
+	.header {
+		&__inner {
+			padding: 5%;
+
+			&:after {
+				bottom: 15%;
+				right: 10%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.header {
+		&__inner {
+
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.header {	
+		&__title {
+			line-height: 40px;
+			@include font-style($font-xxxl, 700);	
+		}
+	}
+}

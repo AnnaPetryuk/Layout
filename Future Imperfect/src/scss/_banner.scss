@@ -1,0 +1,43 @@
+.banner {
+	@include flexbox(column, space-between, flex-start);
+	border-bottom: 1px solid;
+	@include border-opacity ($color-primary-light, 0.3);
+
+	.hexagon {
+	  	width: 65px;
+	  	height: 75px;
+	  	background-image: url(../.././src/img/logo.jpg);
+	  	background-position: center;
+	  	background-size: cover;
+	  	background-repeat: no-repeat;
+	  	clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+	  	@extend %hover;
+	}
+
+	.title {
+		font-size: $font-xxl;
+		font-weight: 900;
+		line-height: 1.5;
+	}
+
+	.subtitle {
+		font-size: $font-l;
+	}
+
+	.hexagon,
+	.title,
+	.subtitle {
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.banner {
+		@include flexbox(column, space-between, center);
+
+		.title,
+		.subtitle {
+			text-align: center;
+		}
+	}
+}

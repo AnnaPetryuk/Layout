@@ -1,0 +1,95 @@
+.icon {
+	position: relative;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		@include sprite(16px);
+	}
+
+	&:hover::before {
+		cursor: pointer;
+	}
+
+	&__i-1 {
+		&::before {
+			background-position: 0 0;
+		}
+	}
+
+	&__i-2 {
+		&::before {
+			background-position: 0 -16px;
+		}
+	}
+
+	&__i-3 {
+		&::before {
+			background-position: 0 -32px;
+		}
+	}
+
+	&__i-4 {
+		&::before {
+			background-position: 0 -48px;
+		}
+	}
+
+	&__i-5 {
+		&::before {
+			background-position: 0 -64px;
+		}
+	}
+
+	&__i-6 {
+		&::before {
+			background-position: 0 -96px;
+		}
+		&:hover::before {
+			background-position: 0 -80px;
+		}
+	}
+
+	&__i-7 {
+		&::before {
+			background-position: 0 -128px;
+		}
+		&:hover::before {
+			background-position: 0 -112px;
+		}
+	}
+
+	&__i-8 {
+		&::before {
+			background-position: 0 -160px;
+		}
+
+		&:hover::before {
+			background-position: 0 -144px;
+		}
+	}
+
+	&__i-9 {
+		&::before {
+			background-position: 0 -192px;
+		}
+		&:hover::before {
+			background-position: 0 -176px;
+		}
+	}
+
+	&__i-10 {
+		&::before {
+			background-position: 0 -208px;
+		}
+	}
+
+	&__i-11 {
+		&::before {
+			background-position: 0 -224px;
+		}
+	}
+}

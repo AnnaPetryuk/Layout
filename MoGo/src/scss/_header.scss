@@ -1,0 +1,174 @@
+.header {
+	background: url(../../src/img/main.png) center center no-repeat;
+	background-size: cover;
+	height: 100vh;
+	color: $color-primary-thelightest;
+
+	&__inner {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		height: 100vh;
+		background: url(../../src/img/banner.png) center center no-repeat;
+		filter: opacity(0.9);
+	}
+
+	&__menu-wrapper {
+		@include flexbox(row, space-between, center);
+	}
+
+	&__logo {
+		font-family: Montserrat;
+		@include font-style($font-xxl, 700);
+	}
+
+	&__menu {
+		width: 45%;
+	}
+
+	&__nav {
+		@include flexbox(row, space-between, center);
+	}
+
+	&__nav-item {
+		padding: 3px 0;
+		border-bottom: 3px solid transparent;
+		font-family: Montserrat;
+		color: $color-primary-thelightest;
+		text-transform: uppercase;
+		@include font-style($font-s, 400);
+
+		transition: all 0.5s;
+
+		&:hover {
+			color: $color-accent-light;
+			border-bottom: 3px solid $color-accent-light;
+		}
+	}
+
+	&__title-wrapper {
+		@include flexbox(column, space-between, center);
+		height: 65%;	
+	}
+
+	&__subtitle {
+		font-family: "Kaushan Script";
+		@include font-style($font-xxxl, 400);
+	}
+
+	&__title {
+		font-family: Montserrat;
+		line-height: 90px;
+		text-transform: uppercase;
+		text-align: center;
+		@include font-style($font-xxxxl, 700);
+	}
+
+	&__separation {
+		width: 60px;
+		height: 3px;
+		background-color: $color-primary-thelightest;
+	}
+
+	&__button {
+		padding: 7px 27px;
+		border: 3px solid $color-primary-thelightest;
+		background-color: transparent;
+		font-family: Montserrat;
+		text-transform: uppercase;
+		text-align: center;
+		@include font-style($font-s, 700);	
+	}
+
+	&__slider-wrapper {
+		counter-reset: number;
+		@include flexbox(row, space-between, center);
+	}
+
+	&__slider-item {
+		counter-increment: number;
+		width: 23%;
+		padding-left: 30px;
+		padding-top: 20px;
+		position: relative;
+		font-family: "Montserrat - Regular";
+		text-transform: uppercase;
+		line-height: $font-l;
+		@include font-style($font-l, 400);	
+		border-top: 3px solid $color-primary-thelightest;
+
+		&:before {
+			content: '0'counter(number);
+			position: absolute;
+			left: 0;
+			font-family: "Montserrat - Bold";
+			@include font-style($font-xl, 700);
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: -3px;
+			left: 0;
+			width: 20%;
+			border-top: 3px solid transparent;
+			transition: all 1s;
+		}
+		
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:hover:after {
+			border-top: 3px solid $color-accent-dark;
+		}
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.header {
+		&__menu {
+			width: 60%;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.header {
+		&__nav-item {
+			display: none;
+		}
+		&__subtitle {
+			@include font-style($font-xxl, 400);
+		}
+		&__title-wrapper {
+			height: 50%;	
+		}
+
+		&__title {
+			line-height: 40px;
+			@include font-style($font-xxxl, 700);
+		}
+
+		&__button {
+			width: 80%;
+		}
+
+		&__slider-wrapper {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 567px) {
+	.header {
+		&__slider-wrapper {
+			display: none;
+		}
+
+		&__button {
+			width: 100%;
+			height: 40px;
+			font-size: $font-l;
+		}
+	}
+}

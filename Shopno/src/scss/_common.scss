@@ -1,0 +1,107 @@
+html {
+	font-size: 18px;
+}
+
+#switch-1, #switch-2, #switch-3, #switch-4,
+#open-1, #open-2, #open-3, #open-4, #open-5, #open-6,
+#person-1, #person-2, #person-3, #person-4 {
+	display: none;
+}
+
+%title-main {
+	line-height: 28px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.title {
+	font-family: Montserrat;
+	letter-spacing: 2.28px;
+	@include color-opacity($color-secondary-thedarkest, 0.9);
+	@include font-style($font-xxxl, 700);
+	@extend %title-main;
+}
+
+.subtitle {
+	margin-top: 15px;
+	font-family: Merriweather;
+	letter-spacing: 1.02px;
+	@include color-opacity($color-secondary-thedarkest, 0.62);
+	@include font-style($font-xs, 400);
+	@extend %title-main;
+}
+
+.button {
+	padding: 10px 37px;
+	border-radius: 2px;
+	font-family: Montserrat;
+	line-height: 28px;
+	letter-spacing: 2.16px;
+	@include color-opacity($color-secondary-thedarkest, 0.7);	
+	@include font-style($font-s, 400);	
+	@extend %title-main;
+}
+
+.inner {
+	padding: 8% calc((100% - 1142px) / 2);
+}
+
+.topic {
+	font-family: "Merriweather - Bold";
+	line-height: 24px;
+	letter-spacing: 1px;
+	@include font-style($font-l, 700);
+	@include color-opacity($color-secondary-thedarkest, 0.95);
+}
+
+.speciality {
+	font-family: "Merriweather - Regular";
+	font-style: italic;
+	letter-spacing: 0.45px;
+	color: $color-secondary-base;
+	@include font-style($font-xxxs, 400);
+}
+
+.paragraph {	
+	font-family: Raleway;
+	line-height: 24px;
+	letter-spacing: 0.16px;
+	text-align: center;
+	@include color-opacity($color-secondary-thedarkest, 0.8);
+	@include font-style($font-xxs, 400);
+}
+
+.icon-wrapper {
+	width: 100px;
+	@include flexbox(row, space-between, center);
+}
+
+@media screen and (max-width: 1200px) {
+	html {
+		font-size: 17px;
+	}
+	.inner {
+		padding: 8%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	html {
+		font-size: 15px;
+	}
+	.button {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 567px) {
+	html {
+		font-size: 14px;
+	}
+}

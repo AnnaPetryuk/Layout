@@ -1,0 +1,102 @@
+.blog {
+	
+	&__news-wrapper {
+		margin-top: 50px;
+		@include flexbox(row, space-between, flex-start);
+	}	
+
+	&__news {
+		width: 32%;
+	}
+
+	&__image-wrapper {
+		position: relative;
+	}
+
+	&__flag {
+		position: absolute;
+		width: 60px;
+		height: 70px;
+		background-color: $color-accent-base;
+		bottom: 10px;
+		left: -10px;
+		@include flexbox(column, center, center);
+		color: $color-primary-thelightest;
+		font-family: "Roboto - Light Italic";
+		font-style: italic;
+		@include font-style($font-m, 400);
+	}
+
+	&__date {
+		font-family: Montserrat;
+		text-transform: uppercase;
+		@include font-style($font-xxl, 700);
+	}
+
+	&__month {
+		font-family: "Roboto Light";
+		font-style: italic;
+		font-weight: 300;
+	}
+
+	&__image {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+
+	&__text-wrapper {
+		border-bottom: 1px solid $color-primary-base;
+		padding: 15px;
+	}
+
+	&__title {
+		color: $color-secondary-base;
+		font-family: Montserrat;
+		text-transform: uppercase;
+		@include font-style($font-s, 400);
+	}
+
+	&__paragraph {
+		margin-top: 10px;
+		color: $color-secondary-light;
+		font-family: Roboto;
+		line-height: $font-xl;
+		@include font-style($font-m, 400);
+	}
+
+	&__controlers {
+		padding: 15px;
+		@include flexbox(row, flex-start, center);
+	}
+	
+	&__value {
+		color: $color-secondary-light;
+		font-family: "Roboto - Light Italic";
+		font-style: italic;
+		line-height: $font-xl;
+		margin: 0 15px 0 5px;
+		@include font-style($font-m, 400);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.blog {
+		&__news-wrapper {
+			@include flexbox(column, space-between, center);
+		}	
+
+		&__news {
+			width: 60%;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.blog {
+
+		&__news {
+			width: 70%;
+		}
+	}
+}

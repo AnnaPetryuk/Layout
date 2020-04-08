@@ -1,0 +1,56 @@
+.gallery {
+	margin-top: 60px;
+}
+
+.image-wrapper {
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	
+	.image {
+		position: absolute;
+	    @include centring();
+		background-position: center center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	}
+
+	.caption {
+		position: absolute;
+		bottom: 20px;
+		left: 20px;
+		font-size: $font-m;
+		@include color-opacity($color-secondary-base, 0.8);
+		text-transform: uppercase;
+	}
+}
+
+.lightbox {
+	display: none;
+	@extend %screen-wrapper;
+	text-align: center;
+	@include background-opacity ($color-primary-thedarkest, 0.7);
+
+	&:target {
+		display: block;
+	}
+
+	.photo {
+		max-width: 90%;
+		max-height: 80%;
+		margin-top: 20%;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.gallery {
+		margin-top: 0;
+		margin-bottom: 60px;
+	}
+
+	.lightbox {
+		.photo {
+			margin-top: 5%;
+		}
+	}
+}

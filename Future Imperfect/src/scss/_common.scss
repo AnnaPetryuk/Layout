@@ -1,0 +1,156 @@
+body {
+	font-size: 17px;
+	font-family: 'Source Sans Pro', sans-serif;
+	background-color: $color-primary-lighter;
+}
+
+.checkbox {
+	display: none;
+}
+
+%text-style {
+	font-size: $font-s;
+	line-height: 2;
+	transition: all 0.6s;
+}
+
+%title-style {
+	text-transform: uppercase;
+	letter-spacing: 0.25em;
+}
+
+%hover {
+	transition: all 0.6s;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+%hover-accent {
+	@extend %hover;
+
+	&:hover {
+		color: $color-secondary-accent;
+	}
+}
+
+.title {
+	color: $color-primary-dark;
+	font-weight: 800;
+	@extend %title-style;
+	@extend %text-style;
+}
+
+.subtitle {
+	color: $color-primary-base;
+	@extend %title-style;
+	@extend %text-style;
+}
+
+.text {
+	color: $color-primary-base;
+	@extend %text-style;
+}
+
+.word-accent {
+	border-bottom: 1px dashed;
+	@include border-opacity ($color-primary-light, 0.3);
+	@extend %hover;
+
+	&:hover {
+		border-bottom: 0 dashed;
+		@include border-opacity ($color-primary-light, 0.3);
+		color: $color-secondary-accent;
+	}
+}
+
+.image {
+	@extend %hover;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+}
+
+.button {
+	border:  1px solid;
+	@include border-opacity ($color-primary-light, 0.3);
+	@include flexbox(column, justify, stretch);
+	padding: 15px;
+	@extend %hover;
+
+	.title {
+		@include flexbox(column, center, center);
+	}
+
+	&:hover {
+		border: 1px solid #2ebaae;
+	}
+
+	&:hover .title {
+		color:  $color-secondary-accent;
+	}
+}
+
+.container {
+	margin: 40px 0 100px 0;
+	padding: 0 3%;
+
+	@include flexbox(column, flex-start, flex-end, wrap);
+	height: 2800px;
+
+
+	.item:nth-of-type(2n+1) { 
+	    order: 1; 
+	    width: 28%;
+	}
+	.item:nth-of-type(2n) { 
+		order: 2;
+		width: 68%;
+	}
+
+	.break {
+		order: 1;
+		flex-basis: 100%;
+		width: 3%;
+		margin: 0;
+		content: "";
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.container {
+		padding: 0 4%;
+	  	@include flexbox(column, flex-start, center, nowrap);
+	
+		.item:nth-of-type(n) { 
+			order: 1; 
+			width: 100%;
+		}
+		.break {
+			display: none;
+		}
+	}
+
+	.image {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	body {
+		font-size: 16px;
+	}
+
+	.container {
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	body {
+		font-size: 15px;
+	}
+}

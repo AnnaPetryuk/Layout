@@ -1,0 +1,40 @@
+.user-info {
+
+	&__field-wrapper {
+		@include flexbox(row, space-between, flex-start);
+		width: 100%;
+		border-bottom: 1px solid;
+		@include border-opacity($color-primary-thelightest, 0.6);
+		margin-bottom: 15px;
+		font-family: Raleway;
+		@include color-opacity($color-primary-thelightest, 0.6);
+		@include font-style($font-xxxs, 400);
+	}
+
+	&__label {
+		width: 15%;
+		padding: 10px 0;
+	}
+
+	&__input {
+		width: 85%;
+		height: 35px;
+		padding: 10px 0;
+		background: transparent;
+		@include color-opacity($color-primary-thelightest, 0.8);
+	}
+
+	&__input--message {
+		height: 120px;
+		resize: none;
+	}
+
+	&__button {
+		margin-top: 64px;
+		background-color: $color-accent-lighter;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
